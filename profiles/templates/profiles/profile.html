@@ -50,7 +50,7 @@
                                     <td>
                                         <a href="{% url 'order_history' order.order_number %}"
                                         title="{{ order.order_number }}">
-                                            {{ order.oder_number|truncatechars:6 }}
+                                            {{ order.order_number|truncatechars:6 }}
                                         </a>
                                     </td>
                                     <td>{{ order.date }}</td>
@@ -62,6 +62,7 @@
                                                         Size {{ item.product.size|upper }}
                                                     {% endif %}{{ item.product.name }} x{{ item.quantity }}
                                                 </li>
+                                            {% endfor %}
                                         </ul>
                                     </td>
                                     <td>${{ order.grand_total }}</td>
